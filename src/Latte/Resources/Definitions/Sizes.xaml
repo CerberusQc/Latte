@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:Double x:Key="MinWidth">800</sys:Double>
+    <sys:Double x:Key="MinHeight">500</sys:Double>
+    <GridLength x:Key="NavBarHeight">25</GridLength>
+    <GridLength x:Key="NavBarIconWidth">30</GridLength>
+    <GridLength x:Key="NavBarMenuWidth">60</GridLength>
+</ResourceDictionary>

@@ -1,0 +1,92 @@
+﻿<Window x:Class="Latte.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+        xmlns:properties="clr-namespace:Latte.Properties"
+        xmlns:local="clr-namespace:Latte"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="{Binding Source={x:Static properties:Settings.Default}, Path=Height}" 
+        Width="{Binding Source={x:Static properties:Settings.Default}, Path=Width}"
+        MinHeight="{StaticResource MinHeight }" 
+        MinWidth="{StaticResource MinWidth}"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip"
+        Background="{DynamicResource DarkColor}">
+ 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{StaticResource NavBarHeight }"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="{DynamicResource MainColor}" Grid.ColumnSpan="2" MouseDown="Grid_MouseDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource NavBarIconWidth}"/>
+                <ColumnDefinition Width="{StaticResource NavBarMenuWidth}"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="{StaticResource NavBarIconWidth}"/>
+                <ColumnDefinition Width="{StaticResource NavBarIconWidth}"/>
+                <ColumnDefinition Width="{StaticResource NavBarIconWidth}"/>
+            </Grid.ColumnDefinitions>
+            <Image 
+                Margin="5"
+                Grid.Column="0" 
+                Source="{StaticResource latteDrawingImage}">
+            </Image>
+            
+            <TextBlock
+                Text="Menu"
+                Foreground="{DynamicResource LightColor}"
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontFamily="{DynamicResource Orbitron}">
+            </TextBlock>
+
+            <TextBlock
+                Text="Latte"
+                Foreground="{DynamicResource SecondaryColor}"
+                Grid.Column="2"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center" 
+                FontFamily="{DynamicResource Orbitron}">
+            </TextBlock>
+            <Button   
+                Name="btnMinimize"
+                Grid.Column="3"
+                Content="-"
+                FontSize="20"
+                Click="btnMinimize_Click"
+                Style="{StaticResource HoverBtnStyle}"
+                Template="{StaticResource BtnTemplate}">
+            </Button>
+            <Button   
+                Name="btnRestore"
+                Grid.Column="4"
+                Content="O"
+                FontSize="14"
+                Click="btnRestore_Click"
+                Style="{StaticResource HoverBtnStyle}"
+                Template="{StaticResource BtnTemplate}">
+            </Button>
+            <Button       
+                Name="btnClose"
+                Grid.Column="5"
+                Content="X"
+                FontSize="14"
+                Click="btnClose_Click"
+                Style="{StaticResource HoverBtnStyle}"
+                Template="{StaticResource BtnTemplate}">
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
