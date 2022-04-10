@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
         xmlns:properties="clr-namespace:Latte.Properties"
         xmlns:local="clr-namespace:Latte"
         mc:Ignorable="d"
@@ -38,13 +37,14 @@
                 <ColumnDefinition Width="{StaticResource NavBarIconWidth}"/>
             </Grid.ColumnDefinitions>
             <Image 
-                Margin="5"
+                Margin="5 0"
                 Grid.Column="0" 
                 Source="{StaticResource latteDrawingImage}">
             </Image>
             
             <TextBlock
                 Text="Menu"
+                Margin="5 5 5 0"
                 Foreground="{DynamicResource LightColor}"
                 Grid.Column="1"
                 VerticalAlignment="Center"

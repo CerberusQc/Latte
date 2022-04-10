@@ -1,4 +1,5 @@
 ﻿using Latte.Properties;
+using Latte.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,9 +23,13 @@ namespace Latte
     /// </summary>
     public partial class MainWindow : Window
     {
+        private KeyController keyController;
         public MainWindow()
         {
             InitializeComponent();
+
+            keyController = new KeyController();
+            keyController.SetupKeyboardHooks();
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
